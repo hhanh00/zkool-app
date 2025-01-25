@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import ImageUploader from "@/components/ui/image_uploader"
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -29,6 +30,7 @@ export const ProfileForm: React.FC<{}> = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <ImageUploader />
         <FormField
           control={form.control}
           name="username"
