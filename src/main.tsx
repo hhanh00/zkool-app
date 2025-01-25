@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
-import { Welcome } from './routes/Welcome.tsx'
 import BottomBar from './components/ui/bottom_nav.tsx'
 import { Open, ProfileForm } from './routes/Open.tsx'
 
