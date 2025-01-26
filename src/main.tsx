@@ -5,7 +5,7 @@ import App from './App.tsx'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import BottomBar from './components/ui/bottom_nav.tsx'
 import { Open } from './routes/Open.tsx'
-import { FileForm } from './routes/File.tsx'
+import { AccountList } from './routes/AccountManager.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')!).render(
       <App />
       <BottomBar />
       <Routes>
-      <Route path="/" element={<FileForm />} />
+      <Route path="/" element={<AccountList />} />
       <Route path="/open" element={<Open />} />
       </Routes>
     </BrowserRouter>
