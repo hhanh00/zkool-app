@@ -4,7 +4,8 @@ import './index.css'
 import App from './App.tsx'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import BottomBar from './components/ui/bottom_nav.tsx'
-import { Open, ProfileForm } from './routes/Open.tsx'
+import { Open } from './routes/Open.tsx'
+import { FileForm } from './routes/File.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -12,7 +13,7 @@ createRoot(document.getElementById('root')!).render(
       <App />
       <BottomBar />
       <Routes>
-      <Route path="/" element={<ProfileForm />} />
+      <Route path="/" element={<FileForm />} />
       <Route path="/open" element={<Open />} />
       </Routes>
     </BrowserRouter>
