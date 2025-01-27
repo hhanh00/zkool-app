@@ -20,3 +20,16 @@ export type SyncState = {
   downloaded: number;
   decrypted: number;
 }
+
+export type AddressBalance = {
+  t: string;
+  a: string;
+  b: number;
+}
+
+export type AccountState = {
+  name: string;
+  height: number;
+  balance: number;
+  addresses: AddressBalance[];
+}
