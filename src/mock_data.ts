@@ -1,4 +1,4 @@
-import { Account } from "./types";
+import { Account, SyncState } from "./types";
 
 export const mock_accounts: Account[] = [
   {
@@ -31,4 +31,16 @@ export const mock_accounts: Account[] = [
     birth: 2100000,
     height: 2200000,
   },
-]
+];
+
+export const mock_sync_state: SyncState = {
+  height: 2795125,
+  start: 2761142,
+  latest: 2801240,
+  is_rescan: false,
+  remaining_eta: 102,
+  start_time: 1737931988,
+  speed: 214,
+  downloaded: 48512,
+  decrypted: 2194204,
+};
