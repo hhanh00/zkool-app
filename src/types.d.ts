@@ -33,3 +33,75 @@ export type AccountState = {
   balance: number;
   addresses: AddressBalance[];
 }
+
+export type Transaction = {
+  id: number;
+  account: number;
+  txid: string;
+  height: number;
+  timestamp: number;
+  value: number;
+  address: string;
+  receiver: string;
+  memo: string;
+  expiration: number;
+  transparent_bundle: {
+    inputs: UTXO[];
+    outputs: UTXO[];
+  }
+  sapling_bundle: {
+    inputs: ShieldedSpend[];
+    outputs: ShieldedOutput[];
+  }
+  orchard_bundle: {
+    inputs: ShieldedSpend[];
+    outputs: ShieldedOutput[];
+  }
+}
+
+export type UTXO = {
+  id: number;
+  account: number;
+  height: number;
+  timestamp: number;
+  txid: string;
+  vout: number;
+  address: string;
+  external: number;
+  addr_index: number;
+  value: number;
+}
+
+export type Note = {
+  note_type: 'Note';
+  id: number;
+  account: number;
+  height: number;
+  timestamp: number;
+  position: number;
+  txid: string;
+  vout: number;
+  address: string;
+  addr_index: number;
+  value: number;
+  cmx: string;
+  rcm: string;
+  nf: string;
+  rho: string;
+  is_orchard: boolean;
+}
+
+export type OpaqueSpend = {
+  note_type: 'OpaqueSpend';
+  nf: string;
+  is_orchard: boolean;
+}
+
+export type OpaqueOutput = {
+  note_type: 'OpaqueOutput';
+  cmx: string;
+  is_orchard: boolean;
+}
+
+export type ShieldedSpend = Note | OpaqueSpend;
+export type ShieldedOutput = Note | OpaqueOutput;
