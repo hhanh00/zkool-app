@@ -1,4 +1,4 @@
-import { Account, AccountState, SyncState, Tx } from "./types";
+import { Account, AccountState, SyncState, Tx, TXSummary } from "./types";
 
 export const mock_accounts: Account[] = [
   {
@@ -85,8 +85,8 @@ export const mock_tx: Tx = {
   height: 2100125,
   timestamp: 1738148377,
   value: 4000000000,
-  address: "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
-  receiver: "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+  receiver:
+    "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
   memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
   expiration: 2100500,
   transparent_bundle: {
@@ -244,3 +244,39 @@ export const mock_tx: Tx = {
     ],
   },
 };
+
+export const mock_txs: TXSummary[] = [
+  {
+    id: 1,
+    account: 1,
+    txid: "d5f64424f55586f66838b53670969a387ef342249e8e9bb40c9a5f2f2fd49d3b",
+    height: 2100125,
+    timestamp: 1738148377,
+    value: 4000000000,
+    receiver:
+      "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+    memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
+  },
+  {
+    id: 2,
+    account: 1,
+    txid: "d5f64424f55586f66838b53670969a387ef342249e8e9bb40c9a5f2f2fd49d3b",
+    height: 2100125,
+    timestamp: 1738148377,
+    value: 4000000000,
+    receiver:
+      "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+    memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
+  },
+  {
+    id: 3,
+    account: 1,
+    txid: "d5f64424f55586f66838b53670969a387ef342249e8e9bb40c9a5f2f2fd49d3b",
+    height: 2100125,
+    timestamp: 1738148377,
+    value: 4000000000,
+    receiver:
+      "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+    memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
+  },
+];

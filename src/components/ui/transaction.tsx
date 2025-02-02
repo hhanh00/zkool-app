@@ -7,25 +7,31 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./accordion";
+import BigNumber from "bignumber.js";
 
 type TransactionProps = React.HTMLAttributes<HTMLDivElement> & {
   tx: Tx;
 };
 
-const p1 = (p: string) => p.substring(0, 32);
-const p2 = (p: string) => p.substring(32, 64);
-const v = (v: number) => v / 100000000;
+export const p1 = (p: string) => p.substring(0, 32);
+export const p2 = (p: string) => p.substring(32, 64);
+export const v = (v: number) => {
+  const satoshisBN = new BigNumber(v);
+  const divisor = new BigNumber(100000000);
+  return satoshisBN.dividedBy(divisor).toString();
+}
+export const dateOf = (ts: number) => dayjs(ts * 1000).format("YYYY-MM-DD HH:mm:ss");
 
 export const Transaction: React.FC<TransactionProps> = ({
   tx,
   className,
   ...props
 }) => {
-  const date = dayjs(tx.timestamp * 1000).format("YYYY-MM-DD HH:mm:ss");
+  const date = dateOf(tx.timestamp);
 
   return (
     <div
-      className="m-auto max-w-sm flex flex-col p-1 border border-amber-500"
+      className="m-auto max-w-sm flex flex-col p-1 border rounded border-amber-500"
       {...props}
     >
       <div className={cn("flex p-2", className)}>
