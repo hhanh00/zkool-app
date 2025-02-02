@@ -34,7 +34,7 @@ export type AccountState = {
   addresses: AddressBalance[];
 }
 
-export type Transaction = {
+export type Tx = {
   id: number;
   account: number;
   txid: string;
@@ -88,6 +88,7 @@ export type Note = {
   rcm: string;
   nf: string;
   rho: string;
+  memo: string;
   is_orchard: boolean;
 }
 

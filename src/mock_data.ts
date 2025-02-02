@@ -1,4 +1,4 @@
-import { Account, AccountState, SyncState, Transaction } from "./types";
+import { Account, AccountState, SyncState, Tx } from "./types";
 
 export const mock_accounts: Account[] = [
   {
@@ -75,23 +75,23 @@ export const mock_account_state: AccountState = {
       a: "tmFtne18VWwk7x8p2wUwfnAqtntMVikctYi",
       b: 10000000,
     },
-  ]
-}
+  ],
+};
 
-export const mock_txs: Transaction[] = [
-  {
-    id: 1,
-    account: 1,
-    txid: "1234567890123456789012345678901234567890123456789012345678901234",
-    height: 2100125,
-    timestamp: 1738148377,
-    value: 4000000000,
-    address: "tmFtne18VWwk7x8p2wUwfnAqtntMVikctYi",
-    receiver: "tmFtne18VWwk7x8p2wUwfnAqtntMVikctYi",
-    memo: "Hello",
-    expiration: 2100500,
-    transparent_bundle: {
-      inputs: [{
+export const mock_tx: Tx = {
+  id: 1,
+  account: 1,
+  txid: "d5f64424f55586f66838b53670969a387ef342249e8e9bb40c9a5f2f2fd49d3b",
+  height: 2100125,
+  timestamp: 1738148377,
+  value: 4000000000,
+  address: "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+  receiver: "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+  memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
+  expiration: 2100500,
+  transparent_bundle: {
+    inputs: [
+      {
         id: 1,
         account: 1,
         height: 2100100,
@@ -101,118 +101,146 @@ export const mock_txs: Transaction[] = [
         address: "tmFtne18VWwk7x8p2wUwfnAqtntMVikctYi",
         external: 0,
         addr_index: 0,
-        value: 1000000000
-      }],
-      outputs: [{
+        value: 1000000000,
+      },
+      {
         id: 2,
         account: 1,
-        height: 2100200,
-        timestamp: 1738197177,
+        height: 2100100,
+        timestamp: 1738147177,
         txid: "1234567890123456789012345678901234567890123456789012345678901234",
-        vout: 1,
+        vout: 0,
         address: "tmFtne18VWwk7x8p2wUwfnAqtntMVikctYi",
         external: 0,
         addr_index: 0,
-        value: 900000000
-      }]
-    },
-    sapling_bundle: {
-      inputs: [{
-        note_type: "OpaqueSpend",
-        nf: "1234567890123456789012345678901234567890123456789012345678901234",
-        is_orchard: false
+        value: 1000000000,
       },
+    ],
+    outputs: [
       {
-        note_type: "Note",
         id: 2,
         account: 1,
         height: 2100200,
         timestamp: 1738197177,
         txid: "1234567890123456789012345678901234567890123456789012345678901234",
-        vout: 1,
-        address: "zregtestsapling1h0ud99tf3qe9lmpmncs8rz0vwluhav0etuuejmvxcjnykd6gvp8tllh77ac0dm60zqmyq3c2a3t",
+        vout: 0,
+        address: "tmFtne18VWwk7x8p2wUwfnAqtntMVikctYi",
+        external: 0,
         addr_index: 0,
         value: 900000000,
-        position: 1421032045,
-        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
-        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
-        nf: "1234567890123456789012345678901234567890123456789012345678901234",
-        rho: "",
-        is_orchard: false,
-      }
+      },
     ],
-      outputs: [{
-        note_type: "OpaqueOutput",
-        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
-        is_orchard: false,
-      },
-      {
-        note_type: "Note",
-        id: 3,
-        account: 1,
-        height: 2100200,
-        timestamp: 1738197177,
-        txid: "1234567890123456789012345678901234567890123456789012345678901234",
-        vout: 1,
-        address: "zregtestsapling1h0ud99tf3qe9lmpmncs8rz0vwluhav0etuuejmvxcjnykd6gvp8tllh77ac0dm60zqmyq3c2a3t",
-        addr_index: 0,
-        value: 900000000,
-        position: 1421032045,
-        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
-        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
-        nf: "1234567890123456789012345678901234567890123456789012345678901234",
-        rho: "",
-        is_orchard: false,
-      }]
-    },
-    orchard_bundle: {
-      inputs: [{
-        note_type: "OpaqueSpend",
-        nf: "1234567890123456789012345678901234567890123456789012345678901234",
-        is_orchard: true
-      },
-      {
-        note_type: "Note",
-        id: 2,
-        account: 1,
-        height: 2100200,
-        timestamp: 1738197177,
-        txid: "1234567890123456789012345678901234567890123456789012345678901234",
-        vout: 1,
-        address: "zregtestsapling1h0ud99tf3qe9lmpmncs8rz0vwluhav0etuuejmvxcjnykd6gvp8tllh77ac0dm60zqmyq3c2a3t",
-        addr_index: 0,
-        value: 900000000,
-        position: 1421032045,
-        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
-        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
-        nf: "1234567890123456789012345678901234567890123456789012345678901234",
-        rho: "1234567890123456789012345678901234567890123456789012345678901234",
-        is_orchard: true,
-      }
-    ],
-      outputs: [{
-        note_type: "OpaqueOutput",
-        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
-        is_orchard: true,
-      },
-      {
-        note_type: "Note",
-        id: 3,
-        account: 1,
-        height: 2100200,
-        timestamp: 1738197177,
-        txid: "1234567890123456789012345678901234567890123456789012345678901234",
-        vout: 1,
-        address: "zregtestsapling1h0ud99tf3qe9lmpmncs8rz0vwluhav0etuuejmvxcjnykd6gvp8tllh77ac0dm60zqmyq3c2a3t",
-        addr_index: 0,
-        value: 900000000,
-        position: 1421032045,
-        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
-        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
-        nf: "1234567890123456789012345678901234567890123456789012345678901234",
-        rho: "1234567890123456789012345678901234567890123456789012345678901234",
-        is_orchard: true,
-      }]
-    }
   },
-];
+  sapling_bundle: {
+    inputs: [
+      {
+        note_type: "OpaqueSpend",
+        nf: "1234567890123456789012345678901234567890123456789012345678901234",
+        is_orchard: false,
+      },
+      {
+        note_type: "Note",
+        id: 2,
+        account: 1,
+        height: 2100200,
+        timestamp: 1738197177,
+        txid: "1234567890123456789012345678901234567890123456789012345678901234",
+        vout: 1,
+        address:
+          "zregtestsapling1h0ud99tf3qe9lmpmncs8rz0vwluhav0etuuejmvxcjnykd6gvp8tllh77ac0dm60zqmyq3c2a3t",
+        addr_index: 0,
+        value: 900000000,
+        position: 1421032045,
+        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
+        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
+        nf: "2234567890123456789012345678901234567890123456789012345678901234",
+        rho: "",
+        memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
+        is_orchard: false,
+      },
+    ],
+    outputs: [
+      {
+        note_type: "OpaqueOutput",
+        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
+        is_orchard: false,
+      },
+      {
+        note_type: "Note",
+        id: 3,
+        account: 1,
+        height: 2100200,
+        timestamp: 1738197177,
+        txid: "1234567890123456789012345678901234567890123456789012345678901234",
+        vout: 1,
+        address:
+          "zregtestsapling1h0ud99tf3qe9lmpmncs8rz0vwluhav0etuuejmvxcjnykd6gvp8tllh77ac0dm60zqmyq3c2a3t",
+        addr_index: 0,
+        value: 900000000,
+        position: 1421032045,
+        cmx: "2234567890123456789012345678901234567890123456789012345678901234",
+        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
+        nf: "1234567890123456789012345678901234567890123456789012345678901234",
+        rho: "",
+        memo: "This demonstration text is carefully crafted to contain exactly 512 characters, ensuring precision for any testing or previewing requirements. It serves as an example to verify that the text fits within strict character limits. Every punctuation mark, space, and letter has been intentionally placed to create a passage that not only meets the exact count but also remains coherent and useful for demonstration purposes. Enjoy this accurate and reliable sample text. This extra sentence fills the remaining gap!",
+        is_orchard: false,
+      },
+    ],
+  },
+  orchard_bundle: {
+    inputs: [
+      {
+        note_type: "OpaqueSpend",
+        nf: "1234567890123456789012345678901234567890123456789012345678901234",
+        is_orchard: true,
+      },
+      {
+        note_type: "Note",
+        id: 2,
+        account: 1,
+        height: 2100200,
+        timestamp: 1738197177,
+        txid: "1234567890123456789012345678901234567890123456789012345678901234",
+        vout: 1,
+        address:
+          "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+        addr_index: 0,
+        value: 900000000,
+        position: 1421032045,
+        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
+        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
+        nf: "2234567890123456789012345678901234567890123456789012345678901234",
+        rho: "1234567890123456789012345678901234567890123456789012345678901234",
+        memo: "",
+        is_orchard: true,
+      },
+    ],
+    outputs: [
+      {
+        note_type: "OpaqueOutput",
+        cmx: "1234567890123456789012345678901234567890123456789012345678901234",
+        is_orchard: true,
+      },
+      {
+        note_type: "Note",
+        id: 3,
+        account: 1,
+        height: 2100200,
+        timestamp: 1738197177,
+        txid: "1234567890123456789012345678901234567890123456789012345678901234",
+        vout: 1,
+        address:
+          "uregtest1qae0mnr0p9jenge23nc47f359kwkyqvq0kl3qfgyqmk5k37jcvqlzafype9r99yxwfhs38q3w0a2qgam489deht2fguv6hg6g5m0c5vk",
+        addr_index: 0,
+        value: 2950000000,
+        position: 1421032045,
+        cmx: "2234567890123456789012345678901234567890123456789012345678901234",
+        rcm: "1234567890123456789012345678901234567890123456789012345678901234",
+        nf: "1234567890123456789012345678901234567890123456789012345678901234",
+        rho: "1234567890123456789012345678901234567890123456789012345678901234",
+        memo: "",
+        is_orchard: true,
+      },
+    ],
+  },
+};
