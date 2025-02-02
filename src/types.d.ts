@@ -41,7 +41,6 @@ export type Tx = {
   height: number;
   timestamp: number;
   value: number;
-  address: string;
   receiver: string;
   memo: string;
   expiration: number;
@@ -106,3 +105,15 @@ export type OpaqueOutput = {
 
 export type ShieldedSpend = Note | OpaqueSpend;
 export type ShieldedOutput = Note | OpaqueOutput;
+
+export type TXSummary = {
+  id: number;
+  account: number;
+  txid: string;
+  height: number;
+  timestamp: number;
+  value: number;
+  receiver: string;
+  memo: string;
+
+};
